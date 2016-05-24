@@ -9,8 +9,15 @@
   "author": "Tadeusz Makuch",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.3.0",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
     "lodash": "^3.10.1",
     "websocket": "^1.0.22"
   }
