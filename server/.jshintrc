@@ -5,5 +5,15 @@
 "eqnull"        : false,  // Tolerate use of `== null`.
 "evil"          : false,  // Tolerate use of `eval`.
 "undef"         : true,   // Require all non-global variables be declared before they are used.
+<<<<<<< HEAD
 "newcap"        : true   // Require capitalization of all constructor functions e.g. `new F()`.
+=======
+//"newcap"        : true,   // Require capitalization of all constructor functions e.g. `new F()`.
+
+"globals"	: {	"module" : false,
+			"angular" : false,
+			"console" : false,
+            "require" : false }
+            
+>>>>>>> 1e552475dd2c9184b64d8b9d22f08b1005f3dfce
 }
