@@ -21,7 +21,7 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
         templateUrl: "partials/status.html"        
     })
     .state('contact', {
-        url: "contact",
+        url: "/contact",
         controller: "ContactCtrl",
         templateUrl: "partials/contact.html"
     })
