@@ -15,5 +15,5 @@ angular.module('myapp').controller('MainCtrl', function ($scope, factory, basket
         return (item.ingredients.map(function (x) {
             return x.label;
         })).join(', ');
-    }
+    };
 });

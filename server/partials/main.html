@@ -4,3 +4,13 @@
     </div>
     <button ui-sref="order()">Kontynuuj</button>   
 </div>
+
+<div>
+    <h1> Wybierz pizze z listy: </h1>
+     </br>
+     <li ng-repeat="x in menu"> {{x.id}}. {{x.name}} {{x.pice}}
+         <li ng-repeat="y in in x.ingredients"> {y.label}, </li>
+         <button ng-click="basket.addItem(x)">+</button>
+     </li>
+</div>
+    
