@@ -20,7 +20,7 @@ gulp.task('clean', function () {
 function copy()
 {
     gulp.src(['node_modules/angular/angular.js', 
-              'node_modules/angular-ui-router/release/angular-ui-router.js']).pipe(gulp.dest('../build/lib/'));
+              'node_modules/angular-ui-router/release/angular-ui-router.js']).pipe(gulp.dest('../build/node_modules/'));
     gulp.src(['./js/*.js']).pipe(gulp.dest('../build/'));
     gulp.src(['./css/*.css']).pipe(gulp.dest('../build/css'));
     gulp.src(['./**/*.html', '!index.html', '!node_modules/**/*']).pipe(gulp.dest('../build'));

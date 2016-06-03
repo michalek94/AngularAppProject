@@ -1,7 +1,7 @@
 angular.module('myapp').service('basket', function () {
     
     var basket = this;
-    basket.content;
+    basket.content= {};
    
    basket.addItem = function (item) {
        if(!(item.id in basket.content)) {

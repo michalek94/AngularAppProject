@@ -24,5 +24,5 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
         url: "/contact",
         controller: "ContactCtrl",
         templateUrl: "partials/contact.html"
-    })
+    });
 });
