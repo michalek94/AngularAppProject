@@ -13,15 +13,15 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
     .state('order', {
         url: "/order",
         controller: "OrderCtrl",
-        templateUrl: "partials//order.html"
+        templateUrl: "partials/order.html"
     })
     .state('status', {
         url: "/status/:orderId",
-        controller: "StatuCtrl",
+        controller: "StatusCtrl",
         templateUrl: "partials/status.html"        
     })
     .state('contact', {
-        url: "contact",
+        url: "/contact",
         controller: "ContactCtrl",
         templateUrl: "partials/contact.html"
     })

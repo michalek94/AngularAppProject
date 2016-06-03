@@ -1,6 +1,6 @@
-angular.module('myapp').factory('factory', ['$http', 'var', function($http, $var) {
+angular.module('myapp').factory('factory', ['$http', '$q', function($http, $var) {
     
-    var factory;
+    var factory = {};
     
     factory.getMenu = function () {
         return $var.all({
@@ -32,7 +32,7 @@ angular.module('myapp').factory('factory', ['$http', 'var', function($http, $var
     };
     
     factory.getContact = function () {
-        return $http.get('.contact');  
+        return $http.get('/contact');  
     };
     
     return factory;

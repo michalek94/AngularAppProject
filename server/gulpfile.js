@@ -36,7 +36,6 @@ gulp.task('build:dev',['clean'], function () {
   copy();
   return target.pipe(inject(sources)).pipe(gulp.dest('../build/'));
 });
-
 //--------------build:prod---------------//
 gulp.task('build:prod', ['clean'], function() {
     var jsStream = gulp.src([ 'node_modules/angular/angular.js', 
@@ -47,4 +46,4 @@ gulp.task('build:prod', ['clean'], function() {
     var cssStream = gulp.src('css/*.css').pipe(gulp.dest('../build/css/'));
     gulp.src(['./**/*.html', '!index.html', '!node_modules/**/*']).pipe(gulp.dest('../build/'));
     gulp.src('index.html').pipe(inject(event.merge(jsStream, cssStream), {ignorePath: '../build/'})).pipe(gulp.dest('../build/'));
-
+});
