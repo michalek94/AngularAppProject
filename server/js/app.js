@@ -17,7 +17,7 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
     })
     .state('status', {
         url: "/status/:orderId",
-        controller: "StatuCtrl",
+        controller: "StatusCtrl",
         templateUrl: "partials/status.html"        
     })
     .state('contact', {

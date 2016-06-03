@@ -1,1 +1,6 @@
-<h1>hello</h1>
+<div ng-hide="basket.empty()">
+    <div>
+        <ng-include src="'partials/basket.html'"/>
+    </div>
+    <button ui-sref="order()">Kontynuuj</button>   
+</div>
