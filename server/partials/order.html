@@ -1,21 +1,27 @@
+<div ng-hide="basket.empty()">
+    <div>
+        <ng-include src="'partials/basket.html'"/>
+    </div>
+</div>
+
 <h2>Twoje zamówienie</h2>
 
 <ng-form name="orderForm" ng-submit="submit()">
     <table>
         <tr>
-            <td>Phone number:</td>
+            <td>Telefon kontaktowy:</td>
             <td><input type="text" name="phone" ng-model="phone" ng-required="true"
              ng-pattern="/\d{9}/" ng-change="validation()" placeholder="9 digits only...">
-            <span>(required)</span></td>
+            <span>*</span></td>
         </tr>
         <tr>
             <td>Street:</td>
             <td><input type="text" name="street" ng-model="street" ng-required="true"
              ng-pattern="/.{5,}/" ng-change="validation()" placeholder="more than 5 letters...">
-            <span>(required)</span></td>
+            <span>*</span></td>
         </tr>
         <tr>
-            <td>Remarks:</td>
+            <td>Dodatkowe informacje:</td>
             <td><textarea cols="50" rows="5" ng-model="remarks"></textarea></td>
         </tr>
 
@@ -27,5 +33,7 @@
         </tr>
     </table>
 </ng-form>
+
+<span>* - pola wymagane</span>
 
 <button type="submit" ng-click="back()">Powrót</button>

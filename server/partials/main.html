@@ -9,7 +9,6 @@
 <p>"Try one of our great pizzas:"</p>
 <ul>
     <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>${{pizza.price}}</b>
-    <li ng-repeat="ingr in pizza.ingredients"> {{ingr.label}}, </li>
-    <button ng-click="basket.addItem(pizza.id)">+</button>
+    <button ng-click="basket.addItem(pizza)">+</button>
     </li>
 </ul>
