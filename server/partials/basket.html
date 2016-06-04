@@ -1,7 +1,8 @@
 <p>Twój koszyk</p>
-<ul>
-    <li ng-repeat="item in basket.content">{{item.id}}. {{item.name}}; Cena: PLN{{item.price}} 
-        <b>Wielkość zamówienia: <input type="number"  ng-model="item.quantity" ng-change="basket.clear(item)" ng-model-options='{ debounce: 1000 }'/><b>
+<ul class="nobullet">
+    <li ng-repeat="item in basket.content">{{item.id}}. {{item.name}},  Cena: {{item.price.toFixed(2)}} PLN 
+        </br>
+        <b>Ilość: <input type="number"  ng-model="item.quantity" ng-change="basket.clear(item)" ng-model-options='{ debounce: 100 }'/><b>
     </li>
 </ul>
-<p><b>Cena końcowa: </b>PLN {{basket.getBasket()}}</p>
+<p><b>Cena końcowa: </b>{{basket.getBasket()}} PLN</p>

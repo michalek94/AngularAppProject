@@ -1,9 +1,9 @@
-<div ng-hide="basket.empty()">
+<div class="basket" ng-hide="basket.empty()">
     <div>
         <ng-include src="'partials/basket.html'"/>
     </div>
 </div>
-
+<div class="mainbox">
 <h2>Twoje zamówienie</h2>
 
 <ng-form name="orderForm" ng-submit="submit()">
@@ -37,3 +37,5 @@
 <span>* - pola wymagane</span>
 
 <button type="submit" ng-click="back()">Powrót</button>
+
+</div>

@@ -30,6 +30,6 @@ angular.module('myapp').service('basket', function () {
            var pizza = basket.content[id];
            total += pizza.quantity * pizza.price;
        }
-       return total;
+       return total.toFixed(2);
    };
 });
