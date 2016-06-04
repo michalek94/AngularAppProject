@@ -12,9 +12,9 @@ angular.module('myapp').controller('StatusCtrl', function ($scope, $state, $stat
         var timeLeft = (new Date($scope.orderStatus.estimated)).getTime() - Date.now();
         timeLeft = parseInt(timeLeft/1000/60);
         if(timeLeft > 0) {
-            $scope.status = "Do doręczenia pizzy pozostało " + timeLeft + " minut."
+            $scope.status = "Do doręczenia pizzy pozostało " + timeLeft + " minut.";
         } else {
-            $scope.status = "Dziękujemy za zamówienie. Zapraszamy ponownie."
+            $scope.status = "Dziękujemy za zamówienie. Zapraszamy ponownie.";
         }
     });
     
