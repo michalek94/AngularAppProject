@@ -1,10 +1,11 @@
-<div ng-hide="basket.empty()">
+<div class="basket" ng-hide="basket.empty()">
     <div>
         <ng-include src="'partials/basket.html'"/>
     </div>
     <button ui-sref="order()">Kontynuuj</button>   
 </div>
 
+<div class="menu">
 <h3>Menu</h3>
 <p>Lista naszych specjalności:</p>
 <ul>
@@ -13,3 +14,4 @@
     <button ng-click="basket.addItem(pizza)">+</button>
     </li>
 </ul>
+</div>

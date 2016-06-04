@@ -1,0 +1,29 @@
+body {
+    
+    margin: auto;
+    margin-top: 0;
+    width: 980px;
+    background-color: #fff;
+    
+}
+
+.top{
+    
+    
+    
+}
+
+
+.basket{
+    float: right;
+    width: 300px;
+    background-color: #bbb;
+    
+}
+
+.menu{
+    float: left;
+    width: 680px;
+    background-color: #ccc;
+    
+}
