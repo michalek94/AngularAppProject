@@ -1,0 +1,31 @@
+<h2>Twoje zamówienie</h2>
+
+<ng-form name="orderForm" ng-submit="submit()">
+    <table>
+        <tr>
+            <td>Phone number:</td>
+            <td><input type="text" name="phone" ng-model="phone" ng-required="true"
+             ng-pattern="/\d{9}/" ng-change="validation()" placeholder="9 digits only...">
+            <span>(required)</span></td>
+        </tr>
+        <tr>
+            <td>Street:</td>
+            <td><input type="text" name="street" ng-model="street" ng-required="true"
+             ng-pattern="/.{5,}/" ng-change="validation()" placeholder="more than 5 letters...">
+            <span>(required)</span></td>
+        </tr>
+        <tr>
+            <td>Remarks:</td>
+            <td><textarea cols="50" rows="5" ng-model="remarks"></textarea></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+            <input type="submit" id="buttonOrder" ng-disabled="disabled"
+             ng-click="submitForm()" value="Order"></td>
+        </tr>
+    </table>
+</ng-form>
+
+<button type="submit" ng-click="back()">Powrót</button>

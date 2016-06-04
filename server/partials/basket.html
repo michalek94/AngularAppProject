@@ -1,6 +1,6 @@
 <p>Twój koszyk</p>
 <ul>
-    <li ng-repeat="item in basket.content">{{item.id}}. {{item.name}}; Cena: ${{item.price}} 
+    <li ng-repeat="item in basket.content">{{item.id}}. {{item.name}}; Cena: PLN{{item.price}} 
         <b>Wielkość zamówienia: <input type="number"  ng-model="item.quantity" ng-change="basket.clear(item)" ng-model-options='{ debounce: 1000 }'/><b>
     </li>
 </ul>

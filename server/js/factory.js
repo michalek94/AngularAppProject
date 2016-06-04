@@ -1,9 +1,9 @@
-angular.module('myapp').factory('factory', ['$http', '$q', function($http, $var) {
+angular.module('myapp').factory('factory', ['$http', '$q', function($http, $q) {
     
     var factory = {};
     
     factory.getMenu = function () {
-        return $var.all({
+        return $q.all({
             'menu': $http.get('./menu'),
             'ingredients': $http.get('./ingredients')
         }).then(function (res) {
@@ -33,6 +33,26 @@ angular.module('myapp').factory('factory', ['$http', '$q', function($http, $var)
     
     factory.getContact = function () {
         return $http.get('/contact');  
+    };
+    
+    factory.sendOrder = function(basket, form) {
+        var order = {
+            order: [],
+            extras: [],
+            orderInfo: {}
+        };
+        
+        Object.keys(basket.content).map(function (key) {return basket.content[key];})
+        .forEach(function(pizza) {
+            order.order.push({
+                id: pizza.id,
+                quantity: pizza.quantity
+            });
+        });
+        
+        order.orderInfo = form;
+        
+        return $http.post('/order', order);
     };
     
     return factory;

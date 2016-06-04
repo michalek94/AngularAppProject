@@ -1,16 +1,24 @@
+<h2>Status Twojego zamówienia</h2>
+
+<ul>
+    <li ng-repeat="pizza in orderStatus.order.order">{{menu[pizza.pizza.id].name}} x{{pizza.quantity}}</li>
+</ul>
+Detale zamówienia:<br/>
 <table>
     <tr>
-        <td>Phone:</td>
+        <td>Numer telefonu::</td>
         <td>{{orderStatus.orderInfo.phone}}</td>
     </tr>
     <tr>
-        <td>Street:</td>
+        <td>Adres zamieszkania:</td>
         <td>{{orderStatus.orderInfo.street}}</td>
     </tr>
     <tr>
-        <td>Remarks:</td>
+        <td>Więcej:</td>
         <td>{{orderStatus.orderInfo.remarks}}</td>
     </tr>
 </table>
-<p>Estimate time: {{timeEstimate}}</p>
+
 <p>Status: {{status}}</p>
+
+<button type="submit" ng-click="back()">Powrót</button>

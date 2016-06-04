@@ -4,3 +4,11 @@
     </div>
     <button ui-sref="order()">Kontynuuj</button>   
 </div>
+
+<h3>Menu</h3>
+<p>"Try one of our great pizzas:"</p>
+<ul>
+    <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>${{pizza.price}}</b>
+    <button ng-click="basket.addItem(pizza.id)">+</button>
+    </li>
+</ul>

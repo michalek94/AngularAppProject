@@ -1,15 +1,18 @@
 angular.module('myapp').service('basket', function () {
     
     var basket = this;
-    basket.content;
+    basket.content = [];
    
-   basket.addItem = function (item) {
-       if(!(item.id in basket.content)) {
-           item.quantity = 0;
-           basket.content[item.id] = item;
-       }
-       basket.content[item.id].quantity += 1;
-   };
+   basket.addItem = function (pizza) {
+        var index = basket.content.indexOf(pizza);
+        
+        if (index == -1) {
+            pizza.quantity = 0;
+            basket.content.push(pizza);
+            index = basket.content.indexOf(pizza);
+        }
+        basket.content[index].quantity += 1;
+    };
    
    basket.clearBasket = function (item) {
        if(basket.content[item.id].quantity <= 0) {
@@ -24,8 +27,8 @@ angular.module('myapp').service('basket', function () {
    basket.getBasket = function () {
        var total = 0;
        for(var id in basket.content) {
-           var item = basket.content[id];
-           total += item.quantity * item.price;
+           var pizza = basket.content[id];
+           total += pizza.quantity * pizza.price;
        }
        return total;
    };
