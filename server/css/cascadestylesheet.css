@@ -16,6 +16,10 @@ input[type=number]{
     list-style: none;
 }
 
+.ingredients{
+    font-size: 13px;
+    
+}
 .top{
     width: 955px;
     height: 50px;

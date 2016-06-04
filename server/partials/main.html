@@ -13,7 +13,7 @@
     
 
     <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>${{pizza.price}}</b>
-		<span ng-repeat="ing in pizza.ingredients"> {{ing.label}} </span>
+		<span class="ingredients" ng-repeat="ing in pizza.ingredients"> {{ing.label}} </span>
 
     <button ng-click="basket.addItem(pizza)">+</button>
     </li>
