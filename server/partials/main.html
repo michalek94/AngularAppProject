@@ -12,7 +12,7 @@
 <ul class="nobullet">
     
 
-    <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>${{pizza.price}}</b>
+    <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>{{pizza.price.toFixed(2)}} PLN</b>
 		<span class="ingredients" ng-repeat="ing in pizza.ingredients"> {{ing.label}} </span>
 
     <button ng-click="basket.addItem(pizza)">+</button>
