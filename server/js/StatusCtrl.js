@@ -1,5 +1,6 @@
 angular.module('myapp').controller('StatusCtrl', function ($scope, $state, $stateParams, factory) {
     
+    $scope.orderId = $stateParams.orderId;
     $scope.menu = {};
     $scope.orderStatus = {};
     $scope.status = null;

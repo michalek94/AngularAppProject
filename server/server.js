@@ -109,7 +109,7 @@ function updateClients(id, order) {
 
 app.post('/order', function (req, res) {
     setTimeout(function () {
-        console.log('Order recived', req.body);
+        console.log('Order received', req.body);
         if (checkIsOrderValid(req.body)) {
             var now = Date.now();
 

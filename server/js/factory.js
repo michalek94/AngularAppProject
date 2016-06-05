@@ -32,7 +32,7 @@ angular.module('myapp').factory('factory', ['$http', '$q', function($http, $q) {
     };
     
     factory.getContact = function () {
-        return $http.get('/contact');  
+        return $http.get('./contact');  
     };
     
     factory.sendOrder = function(basket, form) {
@@ -52,7 +52,7 @@ angular.module('myapp').factory('factory', ['$http', '$q', function($http, $q) {
         
         order.orderInfo = form;
         
-        return $http.post('/order', order);
+        return $http.post('./order', order);
     };
     
     return factory;
