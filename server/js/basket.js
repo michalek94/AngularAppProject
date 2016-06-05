@@ -4,14 +4,11 @@ angular.module('myapp').service('basket', function () {
     basket.content = [];
    
    basket.addItem = function (pizza) {
-        var index = basket.content.indexOf(pizza);
-        
-        if (index == -1) {
+        if (!(pizza.id in basket.content)) {
             pizza.quantity = 0;
-            basket.content.push(pizza);
-            index = basket.content.indexOf(pizza);
+            basket.content[pizza.id] = pizza;
         }
-        basket.content[index].quantity += 1;
+        basket.content[pizza.id].quantity += 1;
     };
    
    basket.clearBasket = function (item) {
