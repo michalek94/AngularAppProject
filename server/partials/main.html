@@ -1,20 +1,19 @@
 
 <div class="basket" ng-hide="basket.empty()">
-                <div>
-                    <ng-include src="'partials/basket.html'"/>
-                </div>
-                <button class="basketbutton" ui-sref="order()">Kontynuuj</button>   
-       </div>
+     <div>
+          <ng-include src="'partials/basket.html'"/>
+     </div>
+          <button class="basketbutton" ui-sref="order()">Kontynuuj</button>   
+</div>
 
 <div class="mainbox">
-<h3>Menu</h3>
-<p>Lista naszych specjalności:</p>
+    <h3>Menu</h3>
+    <p>Lista naszych specjalności:</p>
 <ul class="nobullet">
     
 
     <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>{{pizza.price.toFixed(2)}} PLN</b>
 		<span class="ingredients" ng-repeat="ing in pizza.ingredients track by $index"> {{ing.label}} </span>
-
     <button ng-click="basket.addItem(pizza)">+</button>
     </li>
 </ul>
