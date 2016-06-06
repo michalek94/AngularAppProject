@@ -17,19 +17,19 @@ gulp.task('clean', function () {
 
 function copy()
 {
-    gulp.src(['node_modules/angular/angular.js', 
-              'node_modules/angular-ui-router/release/angular-ui-router.js']).pipe(gulp.dest('../build/lib/'));
-    gulp.src(['./jsfiles/*.js']).pipe(gulp.dest('../build/'));
+    gulp.src(['node_modules/angular/angular.js']).pipe(gulp.dest('../build/node_modules/angular/'));
+	gulp.src(['node_modules/angular-ui-router/release/angular-ui-router.js']).pipe(gulp.dest("../build/node_modules/angular-ui-router/release/"));
+    gulp.src(['./js/*.js']).pipe(gulp.dest('../build/js'));
     gulp.src(['./css/*.css']).pipe(gulp.dest('../build/css'));
     gulp.src(['./**/*.html', '!index.html', '!node_modules/**/*']).pipe(gulp.dest('../build'));
-}
+};
 
--gulp.task('build:dev',['clean'], function () {
+gulp.task('build:dev',['clean'], function () {
     var target = gulp.src('index.html');
     var sources = gulp.src(['node_modules/angular/angular.js', 
                            'node_modules/angular-ui-router/release/angular-ui-router.js',
-                          './jsfiles/**/*.js', './css/**/*.css'], {read: false});
-    copy();
+                          './js/**/*.js', './css/**/*.css'], {read: false});
+   copy();
     return target.pipe(gulp_inject(sources)).pipe(gulp.dest('../build/'));
  });
 

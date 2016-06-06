@@ -14,7 +14,7 @@
 
     <li ng-repeat="pizza in menu">{{pizza.id}}. {{pizza.name}} <b>{{pizza.price.toFixed(2)}} PLN</b>
 		<span class="ingredients" ng-repeat="ing in pizza.ingredients track by $index"> {{ing.label}} </span>
-    <button ng-click="basket.addItem(pizza)">+</button>
+    <button ng-click="basket.addItem(pizza)">+</button><span> </span> <button class="basketbutton" ng-click="basket.addItem(pizza);go('/#/order')">Zamów</button>
     </li>
 </ul>
 </div>
