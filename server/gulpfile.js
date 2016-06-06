@@ -24,6 +24,15 @@ function copy()
     gulp.src(['./**/*.html', '!index.html', '!node_modules/**/*']).pipe(gulp.dest('../build'));
 }
 
+-gulp.task('build:dev',['clean'], function () {
+    var target = gulp.src('index.html');
+    var sources = gulp.src(['node_modules/angular/angular.js', 
+                           'node_modules/angular-ui-router/release/angular-ui-router.js',
+                          './jsfiles/**/*.js', './css/**/*.css'], {read: false});
+    copy();
+    return target.pipe(gulp_inject(sources)).pipe(gulp.dest('../build/'));
+ });
+
 gulp.task('build:prod', ['clean'], function() {
     var jsStream = gulp.src([ 'node_modules/angular/angular.js', 
                               'node_modules/angular-ui-router/release/angular-ui-router.js', 
