@@ -33,4 +33,11 @@ angular.module('myapp').service('basket', function () {
        }
        return total.toFixed(2);
    };
+   basket.isReadable = function(){
+	   if(window.location.href != "http://localhost:8080/#/main")
+	   {
+		   console.log(window.location.href);
+		   return true;
+	   }
+   }
 });

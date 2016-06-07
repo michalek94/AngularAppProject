@@ -2,7 +2,7 @@
 <ul class="nobullet">
     <li ng-repeat="item in basket.content track by item.id">{{item.id}}. {{item.name}},  Cena: {{item.price.toFixed(2)}} PLN 
         </br>
-        <b>Ilość: <input type="number"  ng-model="item.quantity" ng-change="basket.clearBasket(item)" ng-model-options='{ debounce: 100 }'/><b>
+        <b>Ilość: <input type="number"  ng-model="item.quantity" ng-change="basket.clearBasket(item)" ng-readonly="basket.isReadable()" ng-model-options='{ debounce: 100 }'/><b>
     </li>
 </ul>
 <p><b>Cena końcowa: </b>{{basket.getBasket()}} PLN</p>
