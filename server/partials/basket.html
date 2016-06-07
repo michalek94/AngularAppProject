@@ -1,8 +1,9 @@
 <p>Twój koszyk</p>
 <ul class="nobullet">
-    <li ng-repeat="item in basket.content track by item.id">{{item.id}}. {{item.name}},  Cena: {{item.price.toFixed(2)}} PLN 
+    <li ng-repeat="item in basket.content track by $index">{{item.id}}. {{item.name}},  Cena: {{item.price.toFixed(2)}} PLN 
         </br>
-        <b>Ilość: <input type="number"  ng-model="item.quantity" ng-change="basket.clearBasket(item)" ng-readonly="basket.isReadable()" ng-model-options='{ debounce: 100 }'/><b>
-    </li>
+        <b>Ilość: <input type="number" min="1"  ng-model="item.quantity" ng-readonly="basket.isReadable()" ng-model-options='{ debounce: 100 }'/><b>
+		<button ng-click="basket.removePizza($index)">Usun</button>
+	</li>
 </ul>
 <p><b>Cena końcowa: </b>{{basket.getBasket()}} PLN</p>

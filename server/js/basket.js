@@ -17,7 +17,7 @@ angular.module('myapp').service('basket', function () {
    
    basket.clearBasket = function (item) {
        if(basket.content[item.id].quantity <= 0) {
-           delete basket.content[item.id];
+           delete basket.content[item];
        }
    };
    
@@ -39,5 +39,12 @@ angular.module('myapp').service('basket', function () {
 		   console.log(window.location.href);
 		   return true;
 	   }
+   }
+   basket.removePizza = function(item)
+   {
+	   console.log(basket.content[item].id);
+	   basket.content.splice(item,1);
+	   delete basket.content[item];
+	   
    }
 });
